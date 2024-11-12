@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "This requires ELEVATED PRIVILIGES"
+
+echo "Stopping Kasm"
+
+/opt/kasm/bin/stop
+
+echo "Starting Kasm"
+
+/opt/kasm/bin/start
+
+echo "Stopping Searxng"
+
+cd /usr/local
+docker compose down -d
+
+echo "Starting searxng"
+
+cd /usr/local
+docker compose up -d
